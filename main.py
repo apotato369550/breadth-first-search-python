@@ -1,25 +1,35 @@
-import Queue
+adjacency_list = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
+}
 
-def createMaze():
-    maze = []
+visited = []
+queue = []
 
-def printMaze():
+def breadth_first_search(visited, graph, start_node, destination):
+    visited.append(start_node)
+    queue.append(start_node)
+
+    while queue:
+        node = queue.pop(0)
+        print(node + " ")
+
+        if node == destination:
+            return True
+
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.append(neighbor)
+                queue.append(neighbor)
+
+    return False
+
+def print_shortest_distance():
+    # absorb what the algorithm says in geeks for geeks
     return
 
-def valid(maze, moves):
-    return
-
-def findEnd(maze, moves):
-    return
-
-nums = Queue.Queue()
-nums.put("")
-add = ""
-maze = createMaze()
-
-while not findEnd(maze, add):
-    add = nums.get()
-    for direction in ["L", "R", "U", "D"]:
-        put = add + direction
-        if valid(maze, put):
-            nums.put(put)
+# find a new tutorial that explains depth-first search in python/whatever
