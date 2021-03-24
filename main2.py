@@ -36,7 +36,7 @@ def print_shortest_distance(start, destination):
     distance = [0 for i in range(nodes)]
 
     if breadth_first_search(start, destination, predecessor, distance) == False:
-        print "Source and destination are not coneected"
+        print "Source and destination are not connected"
 
     path = []
     crawl = destination
@@ -72,6 +72,9 @@ add_edge(2, 7)
 add_edge(4, 5)
 add_edge(5, 6)
 add_edge(6, 7)
+
+for i in adjacency_list:
+    print i
 
 print_shortest_distance(7, 4)
 
